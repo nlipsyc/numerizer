@@ -209,7 +209,7 @@ def numerize_big_prefixes(s, ignore=None, bias=None):
                             except ValueError:
                                 # Fallback in case group_1 is unparseable like ". million"
                                 group_1_numberized = None
-                        if group_1_numberized:
+                        if group_1_numberized is not None:
                             repl = "<num>" + str(int(v * group_1_numberized))
                         else:
                             repl = str(v)
